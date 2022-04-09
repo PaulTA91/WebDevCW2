@@ -1,10 +1,6 @@
 const express = require("express");
-const router = require("./routes/restaurantRoutes");
+const router = require("./routes/restarauntRoutes");
 const app = express();
-require("dotenv").config();
-
-const cookieParser = require("cookie-parser");
-app.use(cookieParser());
 
 const mustache = require("mustache-express");
 app.engine("mustache", mustache());
