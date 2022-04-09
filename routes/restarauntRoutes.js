@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require("../controllers/restaurantController.js");
 
 router.get("/edit", controller.show_edit);
+router.get("/", controller.landing_page);
 
 router.use(function (req, res) {
   res.status(404);
