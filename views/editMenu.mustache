@@ -1,45 +1,44 @@
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Database Management Interface</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    {{>header}}
 </head>
 
 <body>
-    <form action="/add" method="POST">
-        <fieldset>
-            <div class="mb-3">
-                <label class="form-label">Dish Name</label>
-                <input class="form-control" type="text" id='dish' name="dish" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Ingredients</label>
-                <input class="form-control" type="text" id="ingredients" name="ingredients" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Allergens</label>
-                <input class="form-control" type="text" id="allergens" name="allergens" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Price</label>
-                <input class="form-control" type="number" id="price" name="price" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Which Menu?</label>
-                <select id="menu" name="menu">
-                    <option value="Specials">Specials</option>
-                    <option value="Appetisers">Appetisers</option>
-                    <option value="Main">Main</option>
-                    <option value="Dessert">Dessert</option>
-                    <option value="Drinks">Drinks</option>
-                </select>
-            </div>
-            <button class="btn btn-primary" type="reset">Reset</button>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </fieldset>
-    </form>
+    {{>nav}}
+    <div class="card" style="padding: 2em;">
+        <div class="card-header">
+            Edit a Dish
+        </div>
+        <form action="/add" method="POST">
+            <fieldset>
+                <div class="mb-3">
+                    <label class="form-label">Dish Name</label>
+                    <input class="form-control" type="text" id='dish' name="dish" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ingredients</label>
+                    <input class="form-control" type="text" id="ingredients" name="ingredients" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Allergens</label>
+                    <input class="form-control" type="text" id="allergens" name="allergens" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input class="form-control" type="number" id="price" name="price" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Which Menu?</label>
+                    <select id="menu" name="menu">
+                        <option value="Specials">Specials</option>
+                        <option value="Appetisers">Appetisers</option>
+                        <option value="Main">Main</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Drinks">Drinks</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
 </body>

@@ -1,20 +1,14 @@
 const express = require("express");
 const router = require("./routes/restarauntRoutes");
 const app = express();
+const path = require("path");
 
 const mustache = require("mustache-express");
 app.engine("mustache", mustache());
 app.set("view engine", "mustache");
 
-const path = require("path");
-const public = path.join(__dirname, "public");
-app.use(express.static(public));
-
 app.use(express.urlencoded({ extended: false }));
-
-router.get("/about", function (req, res) {
-  res.redirect("/about.html");
-});
+app.use(express.static(path.join(__dirname, "public")));
 
 router.use(function (req, res) {
   res.status(404);
