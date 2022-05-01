@@ -12,3 +12,9 @@ exports.landing_page = function (req, res) {
     title: "Home Page",
   });
 };
+
+exports.show_about = function (req, res) {
+  res.render("about", {
+    title: "About Us",
+  });
+};
