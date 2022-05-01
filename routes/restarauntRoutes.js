@@ -5,6 +5,9 @@ const controller = require("../controllers/restaurantController.js");
 router.get("/edit", controller.show_edit);
 router.get("/", controller.landing_page);
 router.get("/about", controller.show_about);
+router.post("/showAll", controller.showAll);
+router.post("/new", controller.add_new_dish);
+router.get("/new", controller.showAll);
 
 router.use(function (req, res) {
   res.status(404);

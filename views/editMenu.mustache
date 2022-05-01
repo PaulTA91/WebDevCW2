@@ -4,41 +4,94 @@
 
 <body>
     {{>nav}}
-    <div class="card" style="padding: 2em;">
-        <div class="card-header">
-            Edit a Dish
+    <section class="pt-4">
+        <div class="container ">
+            <div class="row row-cols-2">
+                <div class="mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                    class="bi bi-plus-square-fill"></i></div>
+                            <h2 class="fs-4 fw-bold">Add new Dish</h2>
+                            <form action="/new" method="POST">
+                                <fieldset>
+                                    <div class="mb-3">
+                                        <label class="form-label">Dish Name</label>
+                                        <input class="form-control" type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Dish Description</label>
+                                        <input class="form-control" type="text" id="description" name="description"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Ingredients</label>
+                                        <input class="form-control" type="text" id="ingredients" name="ingredients"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Allergens</label>
+                                        <input class="form-control" type="text" id="allergens" name="allergens"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Price</label>
+                                        <input class="form-control" type="text" id="price" name="price" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Menu</label>
+                                        <select id="menu" name="menu">
+                                            <option value="Specials">Specials</option>
+                                            <option value="Appetisers">Appetisers</option>
+                                            <option value="Main">Main</option>
+                                            <option value="Drinks">Drinks</option>
+                                            <option value="Dessert">Dessert</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                    class="bi bi-dash-square-fill"></i></div>
+                            <h2 class="fs-4 fw-bold">Delete an Dish</h2>
+                            <form action="/delete" method="POST">
+                                <fieldset>
+                                    <div class="mb-3">
+                                        <label class="form-label">Dish ID</label>
+                                        <input class="form-control" type="text" id='empID' name="id" required>
+                                        <br><br>
+                                    </div>
+                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <br><br><br>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                    class="bi bi-filter-square-fill"></i></i></div>
+                            <h2 class="fs-4 fw-bold">Show all Dishes</h2>
+                            <form action="/showAll" method="POST">
+                                <fieldset>
+                                    <button class="btn btn-primary" type="submit">Show All</button>
+                                    <br><br><br>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <form action="/add" method="POST">
-            <fieldset>
-                <div class="mb-3">
-                    <label class="form-label">Dish Name</label>
-                    <input class="form-control" type="text" id='dish' name="dish" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Ingredients</label>
-                    <input class="form-control" type="text" id="ingredients" name="ingredients" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Allergens</label>
-                    <input class="form-control" type="text" id="allergens" name="allergens" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Price</label>
-                    <input class="form-control" type="number" id="price" name="price" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Which Menu?</label>
-                    <select id="menu" name="menu">
-                        <option value="Specials">Specials</option>
-                        <option value="Appetisers">Appetisers</option>
-                        <option value="Main">Main</option>
-                        <option value="Dessert">Dessert</option>
-                        <option value="Drinks">Drinks</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary" type="reset">Reset</button>
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </fieldset>
-        </form>
-    </div>
+    </section>
 </body>
