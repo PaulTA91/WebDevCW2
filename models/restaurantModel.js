@@ -59,6 +59,16 @@ class Restaurant {
       }
     });
   }
+
+  deleteEntry(dishID) {
+    db.remove({ _id: dishID }, {}, function (err, docsRem) {
+      if (err) {
+        console.log("error deleting document");
+      } else {
+        console.log(docsRem, "document removed from database");
+      }
+    });
+  }
 }
 
 module.exports = Restaurant;

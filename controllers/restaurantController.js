@@ -1,3 +1,4 @@
+const { response } = require("express");
 const restaurantDAO = require("../models/restaurantModel");
 
 const db = new restaurantDAO();
@@ -47,5 +48,21 @@ exports.add_new_dish = function (req, res) {
     req.body.price,
     req.body.menu
   );
-  res.redirect("/showAll");
+  res.redirect("/edit");
+};
+
+exports.deleteDish = function (req, res) {
+  console.log("processing deletion");
+  if (!req.body.dishID) {
+    response.status(400).send("Please insert a dish ID");
+    return;
+  }
+  db.deleteEntry(req.body.dishID);
+  res.redirect("/edit");
+};
+
+exports.showNewEntry = function (req, res) {
+  res.render("edit", {
+    title: "Edit Menu",
+  });
 };

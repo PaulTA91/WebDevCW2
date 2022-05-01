@@ -20,7 +20,7 @@
                                         <input class="form-control" type="text" id="name" name="name" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Dish Description</label>
+                                        <label for="description">Dish Description</label>
                                         <input class="form-control" type="text" id="description" name="description"
                                             required>
                                     </div>
@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Price</label>
-                                        <input class="form-control" type="text" id="price" name="price" required>
+                                        <input class="form-control" type="number" id="price" name="price" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Menu</label>
@@ -60,12 +60,12 @@
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                                     class="bi bi-dash-square-fill"></i></div>
-                            <h2 class="fs-4 fw-bold">Delete an Dish</h2>
+                            <h2 class="fs-4 fw-bold">Delete a Dish</h2>
                             <form action="/delete" method="POST">
                                 <fieldset>
                                     <div class="mb-3">
                                         <label class="form-label">Dish ID</label>
-                                        <input class="form-control" type="text" id='empID' name="id" required>
+                                        <input class="form-control" type="text" id='dishID' name="dishID" required>
                                         <br><br>
                                     </div>
                                     <button class="btn btn-primary" type="reset">Reset</button>
