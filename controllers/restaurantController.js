@@ -21,6 +21,12 @@ exports.show_about = function (req, res) {
   });
 };
 
+exports.menu_main_page = function (req, res) {
+  res.render("menuMain", {
+    title: "Menus",
+  });
+};
+
 exports.showAll = function (req, res) {
   db.getAllEntries()
     .then((list) => {

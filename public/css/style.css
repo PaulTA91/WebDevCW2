@@ -1,3 +1,7 @@
+.btn, .btn-warning{
+    background-color: #FEA116 !important;
+}
+
 /********** Template CSS **********/
 :root {
     --primary: #FEA116;

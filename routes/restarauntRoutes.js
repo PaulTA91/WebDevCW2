@@ -10,6 +10,8 @@ router.post("/new", controller.add_new_dish);
 router.get("/new", controller.showNewEntry);
 router.post("/delete", controller.deleteDish);
 router.post("/update", controller.update_availability);
+router.get("/menu", controller.menu_main_page);
+router.get("/specials", controller.showSpecials);
 
 router.use(function (req, res) {
   res.status(404);
