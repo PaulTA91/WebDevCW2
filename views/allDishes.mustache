@@ -5,24 +5,28 @@
 </head>
 
 <body>
-    {{>nav}}
-
-    {{#entries}}
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">{{dish}}</h4>
-            <p class="card-text">
-                {{ingredients}}
-            </p>
-            <p class="card-text">
-                Available: {{available}}
-            </p>
-            <div class="card-footer">
-                <p>Dish ID = {{_id}}</p>
-            </div>
+    <div class="container-xxl bg-white p-0">
+        <div class="container-xxl position-relative p-0">
+            {{>nav}}
         </div>
-        {{/entries}}
-        {{>footer}}
+
+        {{#entries}}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{dish}}</h4>
+                <p class="card-text">
+                    {{ingredients}}
+                </p>
+                <p class="card-text">
+                    Available: {{available}}
+                </p>
+                <div class="card-footer">
+                    <p>Dish ID = {{_id}}</p>
+                </div>
+            </div>
+            {{/entries}}
+            {{>footer}}
+        </div>
 </body>
 
 </html>
