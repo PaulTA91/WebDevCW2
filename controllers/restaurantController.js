@@ -27,6 +27,12 @@ exports.menu_main_page = function (req, res) {
   });
 };
 
+exports.showSpecials = function (req, res) {
+  res.render("specials", {
+    title: "Specials",
+  });
+};
+
 exports.showAll = function (req, res) {
   db.getAllEntries()
     .then((list) => {
