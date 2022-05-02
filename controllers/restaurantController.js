@@ -53,11 +53,7 @@ exports.add_new_dish = function (req, res) {
 
 exports.deleteDish = function (req, res) {
   console.log("processing deletion");
-  if (!req.body.dishID) {
-    response.status(400).send("Please insert a dish ID");
-    return;
-  }
-  db.deleteEntry(req.body.dishID);
+  db.deleteEntry(req.body.remDish);
   res.redirect("/edit");
 };
 

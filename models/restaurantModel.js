@@ -17,6 +17,7 @@ class Restaurant {
       allergens: "a list of allergens here",
       price: 14.99,
       menu: "Specials",
+      available: "yes",
     });
     //for debugging
     console.log("db entry Lasagna inserted");
@@ -60,8 +61,8 @@ class Restaurant {
     });
   }
 
-  deleteEntry(dishID) {
-    db.remove({ _id: dishID }, {}, function (err, docsRem) {
+  deleteEntry(name) {
+    this.db.remove({ dish: name }, {}, function (err, docsRem) {
       if (err) {
         console.log("error deleting document");
       } else {

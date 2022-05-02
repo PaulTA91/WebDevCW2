@@ -64,9 +64,37 @@
                             <form action="/delete" method="POST">
                                 <fieldset>
                                     <div class="mb-3">
-                                        <label class="form-label">Dish ID</label>
-                                        <input class="form-control" type="text" id='dishID' name="dishID" required>
+                                        <label class="form-label">Dish Name</label>
+                                        <input class="form-control" type="text" id='remDish' name="remDish" required>
                                         <br><br>
+                                    </div>
+                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <br><br><br>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                    class="bi bi-dash-square-fill"></i></div>
+                            <h2 class="fs-4 fw-bold">Change Availability</h2>
+                            <form action="/visible" method="POST">
+                                <fieldset>
+                                    <div class="mb-3">
+                                        <label class="form-label">Dish Name</label>
+                                        <input class="form-control" type="text" id='dishName' name="dishName" required>
+                                        <br><br>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Set availability</label>
+                                        <select id="menu" name="menu">
+                                            <option value="yes">Available</option>
+                                            <option value="no">Not available</option>
+                                        </select>
                                     </div>
                                     <button class="btn btn-primary" type="reset">Reset</button>
                                     <button class="btn btn-primary" type="submit">Submit</button>
@@ -94,4 +122,7 @@
             </div>
         </div>
     </section>
+    <footer>
+        {{>footer}}
+    </footer>
 </body>
