@@ -42,7 +42,7 @@ class Restaurant {
     });
   }
 
-  addEntry(dish, description, ingredients, allergens, price, menu) {
+  addEntry(dish, description, ingredients, allergens, price, menu, available) {
     var entry = {
       dish: dish,
       description: description,
@@ -50,6 +50,7 @@ class Restaurant {
       allergens: allergens,
       price: price,
       menu: menu,
+      available: available,
     };
     console.log("dish created", entry);
     this.db.insert(entry, function (err, doc) {
@@ -69,6 +70,21 @@ class Restaurant {
         console.log(docsRem, "document removed from database");
       }
     });
+  }
+
+  updateEntry(name, available) {
+    this.db.update(
+      { dish: name },
+      { $set: { available: available } },
+      {},
+      function (err, docs) {
+        if (err) {
+          console.log("error updating documents", err);
+        } else {
+          console.log(docs, "documents updated");
+        }
+      }
+    );
   }
 }
 

@@ -48,6 +48,13 @@
                                             <option value="Dessert">Dessert</option>
                                         </select>
                                     </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Set availability</label>
+                                        <select id="available" name="available">
+                                            <option value="yes">Available</option>
+                                            <option value="no">Not available</option>
+                                        </select>
+                                    </div>
                                     <button class="btn btn-primary" type="reset">Reset</button>
                                     <button class="btn btn-primary" type="submit">Submit</button>
                                 </fieldset>
@@ -82,7 +89,7 @@
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                                     class="bi bi-dash-square-fill"></i></div>
                             <h2 class="fs-4 fw-bold">Change Availability</h2>
-                            <form action="/visible" method="POST">
+                            <form action="/update" method="POST">
                                 <fieldset>
                                     <div class="mb-3">
                                         <label class="form-label">Dish Name</label>
@@ -91,7 +98,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Set availability</label>
-                                        <select id="menu" name="menu">
+                                        <select id="available" name="available">
                                             <option value="yes">Available</option>
                                             <option value="no">Not available</option>
                                         </select>

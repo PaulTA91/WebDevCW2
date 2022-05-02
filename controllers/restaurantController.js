@@ -46,7 +46,8 @@ exports.add_new_dish = function (req, res) {
     req.body.ingredients,
     req.body.allergens,
     req.body.price,
-    req.body.menu
+    req.body.menu,
+    req.body.available
   );
   res.redirect("/edit");
 };
@@ -54,6 +55,12 @@ exports.add_new_dish = function (req, res) {
 exports.deleteDish = function (req, res) {
   console.log("processing deletion");
   db.deleteEntry(req.body.remDish);
+  res.redirect("/edit");
+};
+
+exports.update_availability = function (req, res) {
+  console.log("updating availability");
+  db.updateEntry(req.body.dishName, req.body.available);
   res.redirect("/edit");
 };
 
