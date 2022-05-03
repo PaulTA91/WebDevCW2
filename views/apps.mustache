@@ -29,9 +29,9 @@
                 {{#entries}}
                 <div class="card bg-dark text-white">
                     <div class="card-body">
-                        <h4 class="card-title text-white">{{dish}}</h4>
+                        <h4 class="card-title" style="color:#FEA116">{{dish}} £{{price}}</h4>
                         <p class="card-text">
-                            Description: {{description}}
+                        <h5 style="color:antiquewhite"><strong>{{description}}</strong></h5>
                         </p>
                         <p class="card-text">
                             Ingredients: {{ingredients}}
@@ -39,9 +39,6 @@
                         <p class="card-text">
                             Allergens: {{allergens}}
                         </p>
-                        <div class="card-footer">
-                            <p>Price: £{{price}}</p>
-                        </div>
                     </div>
                 </div>
                 {{/entries}}
