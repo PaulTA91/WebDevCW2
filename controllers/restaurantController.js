@@ -27,6 +27,12 @@ exports.menu_main_page = function (req, res) {
   });
 };
 
+exports.showLoginPage = function (req, res) {
+  res.render("login", {
+    title: "Login",
+  });
+};
+
 exports.showSpecials = function (req, res) {
   db.getSpecials()
     .then((list) => {

@@ -1,0 +1,62 @@
+<head>
+    {{>header}}
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            {{>nav}}
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container my-5 py-5">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meals</h1>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam
+                                dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
+                                stet lorem sit clita duo justo magna dolore erat amet</p>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                            <img class="img-fluid" src="img/hero.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center bg-dark">
+                    <div class="mb-5">
+                        <div class="card bg-light border-0 h-100 align-items-center">
+                            <h2 class="fs-4 fw-bold">Staff Login</h2>
+                            <form action="/login" method="POST">
+                                <fieldset>
+                                    <div class="mb-3">
+                                        <label class="form-label">Username</label>
+                                        <input class="form-control" type="text" id='userName' name="userName" required>
+                                        <br><br>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password</label>
+                                        <input class="form-control" type="password" id='password' name="password"
+                                            required>
+                                        <br><br>
+                                    </div>
+                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <br><br><br>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {{>footer}}
+
+            </div>
+        </div>
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+</body>
