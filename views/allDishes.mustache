@@ -10,22 +10,43 @@
             {{>nav}}
         </div>
 
-        {{#entries}}
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">{{dish}}</h4>
-                <p class="card-text">
-                    {{ingredients}}
-                </p>
-                <p class="card-text">
-                    Available: {{available}}
-                </p>
-                <div class="card-footer">
-                    <p>Dish ID = {{_id}}</p>
+        <div class="container-xxl py-5 bg-dark hero-header mb-5">
+            <div class="container my-5 py-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="display-3 text-white animated slideInLeft">All Dishes</h1>
+                        <p class="text-white animated slideInLeft mb-4 pb-2">
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                        <img class="img-fluid" src="img/hero.png" alt="">
+                    </div>
                 </div>
             </div>
-            {{/entries}}
-            {{>footer}}
+            <div class="row align-items-center bg-dark">
+                {{#entries}}
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h4 class="card-title text-white">{{dish}}</h4>
+                        <p class="card-text">
+                            Description: {{description}}
+                        </p>
+                        <p class="card-text">
+                            Ingredients: {{ingredients}}
+                        </p>
+                        <p class="card-text">
+                            Allergens: {{allergens}}
+                        </p>
+                        <div class="card-text">
+                            <p>Price: £{{price}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <p>ID: {{_id}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/entries}}
+                {{>footer}}
+            </div>
         </div>
 </body>
 
