@@ -16,6 +16,7 @@ router.get("/apps", controller.showApps);
 router.get("/login", controller.showLoginPage);
 router.get("/mains", controller.showMains);
 router.get("/desserts", controller.showDesserts);
+router.get("/drinks", controller.showDrinks);
 
 router.use(function (req, res) {
   res.status(404);

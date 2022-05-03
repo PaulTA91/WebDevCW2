@@ -99,6 +99,22 @@ class Restaurant {
     });
   }
 
+  getDrinks() {
+    return new Promise((resolve, reject) => {
+      this.db.find(
+        { menu: "Drinks", available: "yes" },
+        function (err, entries) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(entries);
+            console.log("Drinks returned");
+          }
+        }
+      );
+    });
+  }
+
   addEntry(dish, description, ingredients, allergens, price, menu, available) {
     var entry = {
       dish: dish,

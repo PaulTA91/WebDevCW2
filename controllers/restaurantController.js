@@ -85,6 +85,19 @@ exports.showDesserts = function (req, res) {
     });
 };
 
+exports.showDrinks = function (req, res) {
+  db.getDrinks()
+    .then((list) => {
+      res.render("drinks", {
+        title: "Drinks",
+        entries: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+
 exports.showAll = function (req, res) {
   db.getAllEntries()
     .then((list) => {
