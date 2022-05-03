@@ -14,6 +14,7 @@ router.get("/menu", controller.menu_main_page);
 router.get("/specials", controller.showSpecials);
 router.get("/apps", controller.showApps);
 router.get("/login", controller.showLoginPage);
+router.get("/mains", controller.showMains);
 
 router.use(function (req, res) {
   res.status(404);

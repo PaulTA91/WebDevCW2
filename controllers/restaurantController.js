@@ -59,6 +59,19 @@ exports.showApps = function (req, res) {
     });
 };
 
+exports.showMains = function (req, res) {
+  db.getMains()
+    .then((list) => {
+      res.render("entree", {
+        title: "Entreés",
+        entries: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+
 exports.showAll = function (req, res) {
   db.getAllEntries()
     .then((list) => {

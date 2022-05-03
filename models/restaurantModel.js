@@ -70,6 +70,19 @@ class Restaurant {
     });
   }
 
+  getMains() {
+    return new Promise((resolve, reject) => {
+      this.db.find({ menu: "Main", available: "yes" }, function (err, entries) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(entries);
+          console.log("Mains returned");
+        }
+      });
+    });
+  }
+
   addEntry(dish, description, ingredients, allergens, price, menu, available) {
     var entry = {
       dish: dish,
