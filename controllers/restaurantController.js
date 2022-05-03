@@ -72,6 +72,19 @@ exports.showMains = function (req, res) {
     });
 };
 
+exports.showDesserts = function (req, res) {
+  db.getDesserts()
+    .then((list) => {
+      res.render("desserts", {
+        title: "Desserts",
+        entries: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+
 exports.showAll = function (req, res) {
   db.getAllEntries()
     .then((list) => {
