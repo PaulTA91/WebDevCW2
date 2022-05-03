@@ -28,9 +28,29 @@ exports.menu_main_page = function (req, res) {
 };
 
 exports.showSpecials = function (req, res) {
-  res.render("specials", {
-    title: "Specials",
-  });
+  db.getSpecials()
+    .then((list) => {
+      res.render("specials", {
+        title: "Specials",
+        entries: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
+};
+
+exports.showApps = function (req, res) {
+  db.getApps()
+    .then((list) => {
+      res.render("apps", {
+        title: "Appetisers",
+        entries: list,
+      });
+    })
+    .catch((err) => {
+      console.log("promise rejected", err);
+    });
 };
 
 exports.showAll = function (req, res) {

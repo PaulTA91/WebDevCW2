@@ -12,6 +12,7 @@ router.post("/delete", controller.deleteDish);
 router.post("/update", controller.update_availability);
 router.get("/menu", controller.menu_main_page);
 router.get("/specials", controller.showSpecials);
+router.get("/apps", controller.showApps);
 
 router.use(function (req, res) {
   res.status(404);
