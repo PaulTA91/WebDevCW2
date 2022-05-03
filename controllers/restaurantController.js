@@ -2,8 +2,8 @@ const { response } = require("express");
 const restaurantDAO = require("../models/restaurantModel");
 
 const db = new restaurantDAO();
-db.init();
-db.getAllEntries();
+//db.init();
+//db.getAllEntries();
 
 exports.show_edit = function (req, res) {
   res.render("editMenu");

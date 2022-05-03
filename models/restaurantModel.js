@@ -1,12 +1,8 @@
 const nedb = require("nedb");
 class Restaurant {
   constructor(dbFilePath) {
-    if (dbFilePath) {
-      this.db = new nedb({ filename: "menu.db", autoload: true });
-      console.log("DB connected to " + dbFilePath);
-    } else {
-      this.db = new nedb();
-    }
+    this.db = new nedb({ filename: "menu.db", autoload: true });
+    console.log("DB connected to " + dbFilePath);
   }
 
   init() {
