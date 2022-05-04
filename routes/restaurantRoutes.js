@@ -17,6 +17,7 @@ router.get("/login", controller.showLoginPage);
 router.get("/mains", controller.showMains);
 router.get("/desserts", controller.showDesserts);
 router.get("/drinks", controller.showDrinks);
+router.post("/register", controller.post_new_user);
 
 router.use(function (req, res) {
   res.status(404);

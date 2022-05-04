@@ -1,5 +1,6 @@
 const { response } = require("express");
 const restaurantDAO = require("../models/restaurantModel");
+const userDao = require("../models/userModel.js");
 
 const db = new restaurantDAO();
 //db.init();
@@ -144,5 +145,24 @@ exports.update_availability = function (req, res) {
 exports.showNewEntry = function (req, res) {
   res.render("edit", {
     title: "Edit Menu",
+  });
+};
+
+exports.post_new_user = function (req, res) {
+  const user = req.body.newUser;
+  const password = req.body.newPassword;
+
+  if (!user || !password) {
+    res.send(401, "no user or no password");
+    return;
+  }
+  userDao.lookup(user, function (err, u) {
+    if (u) {
+      res.send(401, "user exists", user);
+      return;
+    }
+    userDao.create(user, password);
+    console.log("Register user: ", user, " Password: ", password);
+    res.redirect("/login");
   });
 };

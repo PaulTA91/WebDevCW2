@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/PaulTA91/WebDevCW2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bootstrap": "^5.1.3",
     "bootstrap5": "^1.1.9",
     "express": "^4.17.3",
