@@ -2,6 +2,9 @@ const express = require("express");
 const router = require("./routes/restaurantRoutes");
 const app = express();
 const path = require("path");
+require("dotenv").config();
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
 const mustache = require("mustache-express");
 app.engine("mustache", mustache());

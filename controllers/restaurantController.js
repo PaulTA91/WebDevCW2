@@ -112,24 +112,6 @@ exports.showAll = function (req, res) {
     });
 };
 
-exports.add_new_dish = function (req, res) {
-  console.log("processing add-new_dish controller");
-  if (!req.body.name) {
-    response.status(400).send("Entries must have a name");
-    return;
-  }
-  db.addEntry(
-    req.body.name,
-    req.body.description,
-    req.body.ingredients,
-    req.body.allergens,
-    req.body.price,
-    req.body.menu,
-    req.body.available
-  );
-  res.redirect("/edit");
-};
-
 exports.deleteDish = function (req, res) {
   console.log("processing deletion");
   db.deleteEntry(req.body.remDish);
@@ -149,8 +131,8 @@ exports.showNewEntry = function (req, res) {
 };
 
 exports.post_new_user = function (req, res) {
-  const user = req.body.newUser;
-  const password = req.body.newPassword;
+  const user = req.body.username;
+  const password = req.body.pass;
 
   if (!user || !password) {
     res.send(401, "no user or no password");
@@ -158,11 +140,39 @@ exports.post_new_user = function (req, res) {
   }
   userDao.lookup(user, function (err, u) {
     if (u) {
-      res.send(401, "user exists", user);
+      res.send(401, "User exists:", user);
       return;
     }
     userDao.create(user, password);
-    console.log("Register user: ", user, " Password: ", password);
+    console.log("register user", user, "password", password);
     res.redirect("/login");
   });
+};
+
+exports.add_new_dish = function (req, res) {
+  console.log("processing add-new_dish controller");
+  if (!req.body.name) {
+    response.status(400).send("Entries must have a name");
+    return;
+  }
+  db.addEntry(
+    req.body.name,
+    req.body.description,
+    req.body.ingredients,
+    req.body.allergens,
+    req.body.price,
+    req.body.menu,
+    req.body.available
+  );
+  res.redirect("/edit");
+};
+
+exports.showRegisterPage = function (req, res) {
+  res.render("register", {
+    title: "Registration",
+  });
+};
+
+exports.handle_login = function (req, res) {
+  res.redirect("/edit");
 };

@@ -41,5 +41,5 @@ class UserDAO {
   }
 }
 const dao = new UserDAO();
-dao.init();
+//dao.init();
 module.exports = dao;

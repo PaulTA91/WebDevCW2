@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/restaurantController.js");
+const { login } = require("../auth/auth");
+const { verify } = require("../auth/auth");
 
-router.get("/edit", controller.show_edit);
+router.get("/edit", verify, controller.show_edit);
 router.get("/", controller.landing_page);
 router.get("/about", controller.show_about);
 router.get("/showAll", controller.showAll);
@@ -18,6 +20,8 @@ router.get("/mains", controller.showMains);
 router.get("/desserts", controller.showDesserts);
 router.get("/drinks", controller.showDrinks);
 router.post("/register", controller.post_new_user);
+router.get("/register", controller.showRegisterPage);
+router.post("/login", login, controller.handle_login);
 
 router.use(function (req, res) {
   res.status(404);
