@@ -176,3 +176,7 @@ exports.showRegisterPage = function (req, res) {
 exports.handle_login = function (req, res) {
   res.redirect("/edit");
 };
+
+exports.logout = function (req, res) {
+  res.clearCookie("jwt").status(200).redirect("/");
+};

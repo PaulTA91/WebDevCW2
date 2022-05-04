@@ -22,6 +22,7 @@ router.get("/drinks", controller.showDrinks);
 router.post("/register", controller.post_new_user);
 router.get("/register", controller.showRegisterPage);
 router.post("/login", login, controller.handle_login);
+router.get("/logout", verify, controller.logout);
 
 router.use(function (req, res) {
   res.status(404);
