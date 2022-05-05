@@ -23,6 +23,7 @@ router.post("/register", controller.post_new_user);
 router.get("/register", controller.showRegisterPage);
 router.post("/login", login, controller.handle_login);
 router.get("/logout", verify, controller.logout);
+router.get("/contact", controller.showContactPage);
 
 router.use(function (req, res) {
   res.status(404);
