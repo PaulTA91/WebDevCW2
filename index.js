@@ -5,6 +5,7 @@ const path = require("path");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
+const PORT = process.env.PORT || 3000;
 
 const mustache = require("mustache-express");
 app.engine("mustache", mustache());
@@ -21,6 +22,6 @@ router.use(function (req, res) {
 
 app.use("/", router);
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000. Ctrl^C to quit.");
+app.listen(PORT, () => {
+  console.log("Server listening on port ${PORT}");
 });
