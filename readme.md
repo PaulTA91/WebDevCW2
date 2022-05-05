@@ -3,7 +3,7 @@
 ## Launching the Application
 The fully deployed application is available at `https://paul-armstrong-webdev2-cw2.herokuapp.com/`
 
-In order to run locally first clone this repository then navigate into the repo via command line. This can also be acheived by opeing the folder insde a Visaul Studio Code workspace and opening a terminal.
+In order to run locally first clone this repository then navigate into the repo via command line. This can also be acheived by opening the folder insde a Visaul Studio Code workspace and opening a terminal.
 
 First use the command `npm install` to install all node mdules outlined in the `package.json` file.
 
@@ -28,7 +28,7 @@ This is an MVC web application built on Node using Express framework and nedb fo
 Template used is Restoran – Free Responsive Bootstrap 5 Restaurant Website Template developed by HTML Codex and ThemeWagon. The template is used with permission as the links and credit remain part of the footer available on each page.
 
 ## Design
-The design for the application has changed since the inital design plans were constructed. This is due to both a lack of knowledge and the difficulty of arranging items exactly as showin in the design document.
+The design for the application has changed since the inital design plans were constructed. This is due to both a lack of knowledge and the difficulty of arranging items exactly as shown in in the design document.
 
 The application is fully responsive in mobile views although while the navbar expands on clicking the icon it does not retract on clicking again. This was a difficult issue to pinpoint and as such I ran out of time before implementing a fix.
 
