@@ -173,6 +173,12 @@ exports.showRegisterPage = function (req, res) {
   });
 };
 
+exports.showContactPage = function (req, res) {
+  res.render("contact", {
+    title: "Contact Us",
+  });
+};
+
 exports.handle_login = function (req, res) {
   res.redirect("/edit");
 };
